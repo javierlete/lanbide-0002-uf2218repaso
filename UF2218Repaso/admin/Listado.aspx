@@ -24,23 +24,52 @@
     </asp:GridView>
     <asp:ObjectDataSource ID="ListadoDataSource" runat="server" SelectMethod="ObtenerTodas" TypeName="UF2218Repaso.Daos.PeliculaDao" DataObjectTypeName="UF2218Repaso.Models.Pelicula" DeleteMethod="Borrar"></asp:ObjectDataSource>
 
-    <asp:FormView DefaultMode="Insert" ID="FormularioFormView" runat="server" DataSourceID="FormularioDataSource">
+    <asp:FormView RenderOuterTable="false" DefaultMode="Insert" ID="FormularioFormView" runat="server" DataSourceID="FormularioDataSource">
         <EditItemTemplate>
-            Id:
-            <asp:TextBox ReadOnly="true" Text='<%# Bind("Id") %>' runat="server" ID="IdTextBox" /><br />
-            Titulo:
-            <asp:TextBox Text='<%# Bind("Titulo") %>' runat="server" ID="TituloTextBox" /><br />
-            Fecha:
-            <asp:TextBox TextMode="Date" Text='<%# Bind("Fecha", "{0:yyyy-MM-dd}") %>' runat="server" ID="FechaTextBox" /><br />
-            <asp:LinkButton runat="server" Text="Actualizar" CommandName="Update" ID="UpdateButton" CausesValidation="True" />&nbsp;<asp:LinkButton runat="server" Text="Cancelar" CommandName="Cancel" ID="UpdateCancelButton" CausesValidation="False" />
+            <div class="row mb-3">
+                <asp:Label CssClass="col-sm-2 col-form-label" ID="IdLabel" runat="server" Text="Id:" AssociatedControlID="IdTextBox"></asp:Label>
+                <div class="col-sm-10">
+                    <asp:TextBox ReadOnly="true" CssClass="form-control" ID="IdTextBox" runat="server" Text='<%# Bind("Id") %>' />
+                </div>
+            </div>
+            <div class="row mb-3">
+                <asp:Label CssClass="col-sm-2 col-form-label" ID="TituloLabel" runat="server" Text="Título:" AssociatedControlID="TituloTextBox"></asp:Label>
+                <div class="col-sm-10">
+                    <asp:TextBox CssClass="form-control" ID="TituloTextBox" runat="server" Text='<%# Bind("Titulo") %>' />
+                </div>
+            </div>
+            <div class="row mb-3">
+                <asp:Label CssClass="col-sm-2 col-form-label" ID="FechaLabel" runat="server" Text="Fecha:" AssociatedControlID="FechaTextBox"></asp:Label>
+                <div class="col-sm-10">
+                    <asp:TextBox Text='<%# Bind("Fecha", "{0:yyyy-MM-dd}") %>' TextMode="Date" CssClass="form-control" ID="FechaTextBox" runat="server" />
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-sm-10 offset-sm-2">
+                    <asp:LinkButton CssClass="btn btn-primary" runat="server" CommandName="Update" Text="Guardar" />
+                    &nbsp;<asp:LinkButton CssClass="btn btn-danger" runat="server" CommandName="Cancel" Text="Cancelar" />
+                </div>
+            </div>
         </EditItemTemplate>
         <InsertItemTemplate>
-            <asp:TextBox ReadOnly="true" Visible="false" Text='0' runat="server" ID="IdTextBox"  /><br />
-            Titulo:
-            <asp:TextBox Text='<%# Bind("Titulo") %>' runat="server" ID="TituloTextBox" /><br />
-            Fecha:
-            <asp:TextBox TextMode="Date" Text='<%# Bind("Fecha") %>' runat="server" ID="FechaTextBox" /><br />
-            <asp:LinkButton runat="server" Text="Insertar" CommandName="Insert" ID="InsertButton" CausesValidation="True" />&nbsp;<asp:LinkButton runat="server" Text="Cancelar" CommandName="Cancel" ID="InsertCancelButton" CausesValidation="False" />
+            <div class="row mb-3">
+                <asp:Label CssClass="col-sm-2 col-form-label" ID="TituloLabel" runat="server" Text="Título:" AssociatedControlID="TituloTextBox"></asp:Label>
+                <div class="col-sm-10">
+                    <asp:TextBox CssClass="form-control" ID="TituloTextBox" runat="server" Text='<%# Bind("Titulo") %>' />
+                </div>
+            </div>
+            <div class="row mb-3">
+                <asp:Label CssClass="col-sm-2 col-form-label" ID="FechaLabel" runat="server" Text="Fecha:" AssociatedControlID="FechaTextBox"></asp:Label>
+                <div class="col-sm-10">
+                    <asp:TextBox TextMode="Date" CssClass="form-control" ID="FechaTextBox" runat="server" Text='<%# Bind("Fecha") %>' />
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-sm-10 offset-sm-2">
+                    <asp:LinkButton CssClass="btn btn-primary" ID="LinkButton1" runat="server" CommandName="Insert" Text="Insertar" />
+                    &nbsp;<asp:LinkButton CssClass="btn btn-danger" ID="LinkButton2" runat="server" CommandName="Cancel" Text="Cancelar" />
+                </div>
+            </div>
         </InsertItemTemplate>
         <ItemTemplate>
             Id:
