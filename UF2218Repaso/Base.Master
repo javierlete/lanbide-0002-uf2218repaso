@@ -31,6 +31,19 @@
                             <asp:HyperLink runat="server" CssClass="nav-link" aria-current="page" NavigateUrl="~/admin/Listado.aspx" Text="Administración" />
                         </li>
                     </ul>
+                    <span class="navbar-text pe-3"><%= HttpContext.Current.User.Identity.Name %></span>
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <% if (HttpContext.Current.User.Identity.Name.Length != 0)
+                                { %>
+                            <asp:LinkButton OnClick="LogoutButton_Click" runat="server" ID="LogoutButton" CssClass="btn btn-outline-light" Text="Logout" />
+                            <% }
+                                else
+                                { %>
+                            <asp:HyperLink runat="server" CssClass="btn btn-outline-light" Text="Login" NavigateUrl="~/Login.aspx" />
+                            <% } %>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
