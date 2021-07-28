@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Base.Master" AutoEventWireup="true" CodeBehind="Listado.aspx.cs" Inherits="UF2218Repaso.admin.Listado" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Base.Master" AutoEventWireup="true" CodeBehind="Listado.aspx.cs" Inherits="UF2218Repaso.admin.Listado" UnobtrusiveValidationMode="None" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -56,17 +56,20 @@
                 <asp:Label CssClass="col-sm-2 col-form-label" ID="TituloLabel" runat="server" Text="Título:" AssociatedControlID="TituloTextBox"></asp:Label>
                 <div class="col-sm-10">
                     <asp:TextBox CssClass="form-control" ID="TituloTextBox" runat="server" Text='<%# Bind("Titulo") %>' />
+                    <asp:RequiredFieldValidator Display="Dynamic" CssClass="text-danger" ErrorMessage="Se debe introducir un título" ControlToValidate="TituloTextBox" runat="server" ValidationGroup="InsertarGroup" />
+                    <asp:RegularExpressionValidator Display="Dynamic" CssClass="text-danger" ControlToValidate="TituloTextBox" ValidationExpression="\w{5,50}" runat="server" ErrorMessage="El título debe tener entre 5 y 50 caracteres" ValidationGroup="InsertarGroup"></asp:RegularExpressionValidator>
                 </div>
             </div>
             <div class="row mb-3">
                 <asp:Label CssClass="col-sm-2 col-form-label" ID="FechaLabel" runat="server" Text="Fecha:" AssociatedControlID="FechaTextBox"></asp:Label>
                 <div class="col-sm-10">
-                    <asp:TextBox TextMode="Date" CssClass="form-control" ID="FechaTextBox" runat="server" Text='<%# Bind("Fecha") %>' />
+                    <asp:TextBox Display="Dynamic" TextMode="Date" CssClass="form-control" ID="FechaTextBox" runat="server" Text='<%# Bind("Fecha") %>' />
+                    <asp:RangeValidator Display="Dynamic" CssClass="text-danger" CultureInvariantValues="false" Type="Date" ControlToValidate="FechaTextBox" MinimumValue="1800-01-01" MaximumValue="<%# DateTime.Today.ToShortDateString() %>" ID="FechaRangeValidator" runat="server" ErrorMessage="La fecha no puede ser posterior a hoy ni anterior a 1800" ValidationGroup="InsertarGroup"></asp:RangeValidator>
                 </div>
             </div>
             <div class="row mb-3">
                 <div class="col-sm-10 offset-sm-2">
-                    <asp:LinkButton CssClass="btn btn-primary" ID="LinkButton1" runat="server" CommandName="Insert" Text="Insertar" />
+                    <asp:LinkButton CssClass="btn btn-primary" ID="LinkButton1" runat="server" CommandName="Insert" Text="Insertar" ValidationGroup="InsertarGroup" />
                     &nbsp;<asp:LinkButton CssClass="btn btn-danger" ID="LinkButton2" runat="server" CommandName="Cancel" Text="Cancelar" />
                 </div>
             </div>
