@@ -20,6 +20,7 @@ namespace UF2218Repaso.Daos
 
         public static Pelicula ObtenerPorId(long id)
         {
+            if (!peliculas.ContainsKey(id)) { return null; }
             return peliculas[id];
         }
 

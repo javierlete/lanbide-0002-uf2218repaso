@@ -13,5 +13,15 @@ namespace UF2218Repaso.admin
         {
 
         }
+
+        protected void ListadoGridView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FormularioFormView.ChangeMode(FormViewMode.Edit);
+        }
+
+        protected void RefrescarListadoGridView(object sender, ObjectDataSourceStatusEventArgs e)
+        {
+            ListadoGridView.DataBind();
+        }
     }
 }
