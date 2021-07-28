@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UF2218Repaso", "UF2218Repaso\UF2218Repaso.csproj", "{7489CCA5-F532-43F7-8F78-9EC796BA2809}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7489CCA5-F532-43F7-8F78-9EC796BA2809}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7489CCA5-F532-43F7-8F78-9EC796BA2809}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7489CCA5-F532-43F7-8F78-9EC796BA2809}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7489CCA5-F532-43F7-8F78-9EC796BA2809}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {061F554B-6A50-4F7E-94BD-4F155E11519D}
+	EndGlobalSection
+EndGlobal
