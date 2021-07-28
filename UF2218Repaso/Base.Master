@@ -34,7 +34,7 @@
                 </div>
             </div>
         </nav>
-        <main>
+        <main class="container-fluid">
             <asp:ContentPlaceHolder ID="contenido" runat="server">
             </asp:ContentPlaceHolder>
         </main>
