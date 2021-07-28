@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="~/Content/all.min.css" />
     <link rel="stylesheet" href="~/Content/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/Content/ejemplo.css" />
+    <link rel="stylesheet" href="~/Content/estilos.css" />
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -18,7 +18,7 @@
     <form id="form1" runat="server">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Ejemplo ASP.NET</a>
+                <a class="navbar-brand" href="#">Películas ASP.NET</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -48,6 +48,6 @@
         </footer>
     </form>
 
-    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <script src="/Scripts/bootstrap.bundle.min.js"></script>
 </body>
 </html>
